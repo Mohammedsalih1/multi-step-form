@@ -1,0 +1,405 @@
+:root {
+  /*Primary */
+
+  --Marine-blue: hsl(213, 96%, 18%);
+  --Purplish-blue: hsl(243, 100%, 62%);
+  --Pastel-blue: hsl(228, 100%, 84%);
+  --Light-blue: hsl(206, 94%, 87%);
+  --Strawberry-red: hsl(354, 84%, 57%);
+
+  /*Neutral */
+
+  --Cool-gray: hsl(231, 11%, 63%);
+  --Light-gray: hsl(229, 24%, 87%);
+  --Magnolia: hsl(217, 100%, 97%);
+  --Alabaster: hsl(231, 100%, 99%);
+  --White: hsl(0, 0%, 100%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  background-color: var(--Magnolia);
+  position: relative;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/*small*/
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/*end gloal rules*/
+/* start container  */
+.container {
+  background-color: var(--White);
+  border-radius: 6px;
+  margin-top: 20px;
+  height: 500px;
+  gap: 20px;
+  position: relative;
+  padding-left: 0;
+}
+@media (width <= 767px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+    background-color: transparent;
+    gap: 0;
+    margin-top: 0;
+  }
+}
+.container .sidebar {
+  display: flex;
+  gap: 20px;
+  padding: 20px 60px 20px 20px;
+  background-image: url(bg-sidebar-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+@media (width <= 767px) {
+  .container .sidebar {
+    flex-direction: column;
+    background-color: #246;
+    background-image: url(bg-sidebar-mobile.svg);
+    background-size: cover;
+    height: 180px;
+    padding: 20px 0 0 0;
+  }
+  .container .sidebar .stepNums {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: center;
+  }
+  .container .sidebar .stepInfo {
+    display: none;
+  }
+}
+.container .sidebar .stepNums li {
+  border: 1px solid var(--White);
+  padding: 8px 14px;
+  border-radius: 50%;
+  margin-bottom: 21px;
+  color: var(--White);
+}
+.container .sidebar .stepNums li.active {
+  background-color: var(--Light-blue);
+  color: var(--Marine-blue);
+}
+.container .sidebar .stepInfo span {
+  color: var(--Light-gray);
+  font-size: 14px;
+  margin-bottom: 5px;
+  display: block;
+}
+.container .sidebar .stepInfo p {
+  color: var(--Alabaster);
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+.container .sidebar .stepInfo div:not(.step4) {
+  margin-bottom: 21px;
+}
+.container .steps {
+  padding-right: 40px;
+  padding-left: 40px;
+  padding-top: 40px;
+}
+@media (width <= 767px) {
+  .steps {
+    background-color: var(--White);
+    border-radius: 6px;
+    position: relative;
+    bottom: 50px;
+    margin: 0 auto;
+    width: 96%;
+    margin-bottom: 50px;
+  }
+}
+.stepOne,
+.stepTwo,
+.stepThree,
+.stepFour {
+  display: none;
+  width: 400px;
+}
+.title {
+  color: var(--Marine-blue);
+}
+.subline {
+  color: var(--Cool-gray);
+}
+.container .stepOne {
+  display: none;
+}
+.Active {
+  display: block !important;
+}
+.container .stepOne form {
+  margin-top: 30px;
+}
+.container .stepOne form .label {
+  color: var(--Marine-blue);
+  margin-bottom: 10px;
+}
+.container .stepOne form input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid var(--Marine-blue);
+  outline: none;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+.nextBtn {
+  border: none;
+  outline: none;
+  color: var(--White);
+  background-color: var(--Marine-blue);
+  border-radius: 6px;
+  padding: 10px 15px;
+  cursor: pointer;
+  float: right;
+}
+.goBack {
+  display: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: var(--Cool-gray);
+}
+.container .stepOne form button:focus {
+  border: 2px solid var(--Cool-gray);
+}
+/* start step two  */
+.stepTwo .plans .plan {
+  padding: 15px 20px 15px 7px;
+  border: 1px solid var(--Light-gray);
+  flex-basis: 30%;
+  cursor: pointer;
+}
+.stepTwo .plans .plan.active {
+  border: 1px solid var(--Purplish-blue);
+  background-color: var(--Magnolia);
+}
+.stepTwo .plans .plan img {
+  width: 28px;
+  padding-bottom: 22px;
+}
+.stepTwo .plans .plan > p {
+  color: var(--Marine-blue);
+  font-size: 0.9rem;
+  padding-bottom: 2px;
+}
+.stepTwo .plans .plan .pricePlan {
+  color: var(--Cool-gray);
+  font-size: 0.8rem;
+}
+.stepTwo .plans .plan .yearlyPlan {
+  color: var(--Marine-blue);
+  opacity: 0;
+}
+.stepTwo .plans .plan .yearlyPlan.active {
+  padding-top: 8px;
+  opacity: 1;
+}
+.stepTwo .switch {
+  margin-top: 20px;
+  background-color: var(--Magnolia);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 5px 0;
+  border-radius: 4px;
+}
+.stepTwo .switch span {
+  color: var(--Cool-gray);
+}
+.stepTwo .switch span.active {
+  color: var(--Marine-blue);
+}
+.stepTwo .switch .key-contain {
+  position: relative;
+  width: 40px;
+  height: 17px;
+  border-radius: 9px;
+  background-color: var(--Marine-blue);
+  cursor: pointer;
+}
+.stepTwo .switch .key-contain .key.active {
+  left: 22px;
+  /* right: 2px; */
+}
+.stepTwo .switch .key-contain .key {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: var(--White);
+  left: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: 0.2s;
+}
+/* end step two  */
+/* start step three  */
+.stepThree .box {
+  position: relative;
+  border: 1px solid var(--Cool-gray);
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.stepThree .box:first-of-type,
+.stepThree .box:nth-of-type(2) {
+  background-color: var(--Magnolia);
+  border: 1px solid var(--Purplish-blue);
+}
+.stepThree .box .text p:first-of-type {
+  color: var(--Marine-blue);
+  font-weight: bold;
+}
+.stepThree .box .text p:last-of-type {
+  color: var(--Cool-gray);
+}
+.stepThree .box .PlanPrice {
+  color: var(--Purplish-blue);
+  position: absolute;
+  right: 10px;
+}
+/* end step three  */
+/* start stepFour  */
+.stepFour .totalBox {
+  background-color: var(--Alabaster);
+}
+.stepFour .arcadeP {
+  border-bottom: 1px solid var(--Light-gray);
+}
+.stepFour .totalBox .arcadeP .fristPlan .ar {
+  padding-bottom: 6px;
+  color: var(--Marine-blue);
+  font-weight: bold;
+}
+.stepFour .arcadeP .fristPlan a {
+  color: var(--Cool-gray);
+  text-decoration: underline;
+}
+.stepFour .arcadeP .ArcadePrice {
+  color: var(--Marine-blue);
+  font-weight: bold;
+}
+.totalBox :is(.onlineService, .storage) {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.totalBox :is(.onlineService, .storage) > p {
+  color: var(--Cool-gray);
+}
+.totalBox :is(.onlineService, .storage) > .PlanPrice {
+  color: var(--Marine-blue);
+}
+.stepFour .total {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+.stepFour .total .totalP {
+  color: var(--Cool-gray);
+}
+.stepFour .total .finalP {
+  color: var(--Purplish-blue);
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+/* end stepFour  */
+/* start final step  */
+.finalstep {
+  display: none;
+  text-align: center;
+  margin-bottom: 20px;
+  width: 400px;
+}
+.finalstep img {
+  width: 60px;
+  margin-bottom: 10px;
+}
+.finalstep h3 {
+  margin-bottom: 10px;
+  color: var(--Marine-blue);
+  font-size: 1.4rem;
+}
+.finalstep .thanking {
+  line-height: 1.3;
+  color: var(--Cool-gray);
+}
+.confrim {
+  display: none;
+  float: right;
+  border-radius: 6px;
+  padding: 10px 15px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  background-color: var(--Purplish-blue);
+  color: var(--White);
+}
+.btns {
+  position: absolute;
+  width: 480px;
+  bottom: 20px;
+  padding: 0 40px;
+  right: 14px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+/* end final step  */
+@media (width <= 767px) {
+  .btns {
+    position: absolute;
+    bottom: 0;
+    background-color: var(--White);
+    width: 100%;
+    left: 0;
+    padding: 10px 53px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+}
+/* end container  */
